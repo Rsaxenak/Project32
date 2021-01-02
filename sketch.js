@@ -114,6 +114,8 @@ function draw() {
 
   stand.display();
 
+  giveWinText();
+
   fill("white");
   textSize(20);
   text("Use you mouse to throw the bottles!", 10,20);
@@ -141,6 +143,17 @@ function keyPressed()
     slingshot.attach(ball.body);
   }
 }
+
+function giveWinText() 
+{
+  if (score > 3199)
+  {
+    fill("white");
+    textSize(50);
+    text("YOU WON!!!!!!", width/3, height/2);
+  }
+}
+
 async function getBackgroundImage() 
 {
     var response = await fetch("http://worldtimeapi.org/api/timezone/Asia/kolkata");
